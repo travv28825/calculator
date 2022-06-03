@@ -7,7 +7,7 @@ type DisplayArgs = {
 function Input({ data }: DisplayArgs) {
   return (
     <Display>
-      <input value={data} id="display" type="text" />
+      <input value={data} id="display" type="text" readOnly={true} />
     </Display>
   );
 }
