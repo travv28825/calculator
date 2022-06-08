@@ -128,7 +128,6 @@ Error generating stack: `+o.message+`
   width: 25rem;
   height: 27rem;
   padding: 1rem;
-  border-radius: 6px;
   overflow: hidden;
   position: relative;
   background: #c3bfbf;
