@@ -1,5 +1,5 @@
-const operationReg = /[\+\-\*\/]/
-const invalidOperationToBegin = /[\+\*\/]/
+const operationReg = /[\+\-\*\/\%\^]/
+const invalidOperationToBegin = /[\+\*\/\%]/
 
 function isValidDisplay(display: string, toAdd: string): boolean {
   const isValidDots = hasValidDot(display + toAdd)
@@ -37,7 +37,7 @@ function isValidToShowResult(str: string): boolean {
 }
 
 function equal(str: string): number {
-  const reg = /[*/+-]/;
+  const reg = /[*/+-\^]/;
   if (str.match(reg)) {
     let temp = '';
     for (let i = 0; i < str.length; i++) {
@@ -49,7 +49,9 @@ function equal(str: string): number {
         return parseFloat(temp) * equal(str.substring(i + 1));
       } else if (str[i] === '/') {
         return parseFloat(temp) / equal(str.substring(i + 1));
-      } else {
+      }else if (str[i] === '^') {
+        return Math.sqrt( equal(str.substring(i + 1)));
+      }else {
         temp += str[i];
       }
     }
@@ -58,4 +60,10 @@ function equal(str: string): number {
   return parseFloat(str);
 }
 
-export { equal, isValidDisplay, isValidToShowResult };
+function percent(str:string):string{
+const calc = equal(str)
+
+return (calc /100).toString()
+}
+
+export { equal, percent, isValidDisplay, isValidToShowResult };

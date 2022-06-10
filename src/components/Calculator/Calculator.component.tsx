@@ -8,7 +8,7 @@ import {
   NumbersWrapper,
 } from './Calculator.style';
 
-import { equal, isValidDisplay, isValidToShowResult } from '../operations';
+import { equal, isValidDisplay, isValidToShowResult, percent } from '../operations';
 import Display from '../Display';
 
 function Calculator() {
@@ -16,16 +16,24 @@ function Calculator() {
   const [result, setResult] = useState<string>('');
 
   function handleButtonClick(btnValue: string) {
-    if (isValidDisplay(displayValue,btnValue)) {
+    if (isValidDisplay(displayValue, btnValue)) {
       const actualDisplay = displayValue + btnValue;
       setDisplayValue(actualDisplay);
     }
   }
 
   function getEqual(): void {
-    if(isValidToShowResult(displayValue)){
+    if (isValidToShowResult(displayValue)) {
       const result = equal(displayValue).toString();
       setResult(result);
+    }
+  }
+
+  function calculatePercent() {
+    if (isValidDisplay(displayValue, '%')) {
+      const result = percent(displayValue)
+      setDisplayValue(result)
+      setResult(result)
     }
   }
 
@@ -34,33 +42,32 @@ function Calculator() {
     setResult('');
   }
 
+  function goBack() {
+    const newDisplay = displayValue.slice(0, displayValue.length - 1)
+
+    setDisplayValue(newDisplay)
+  }
+
   return (
     <Container>
       <CalculatorContainer>
         <Display data={displayValue} result={result} />
         <NumbersWrapper>
           <ButtonsGroup>
-            <Button align={2} bg="dark" toDisplay={onClear} val="Clear" />
-            <Button align={1} bg="dark" toDisplay={onClear} val="?" />
-            <Button align={1} bg="dark" toDisplay={onClear} val="?" />
+            <Button align={1} bg="dark" toDisplay={onClear} val="Clear" />
+            <Button align={1} bg="dark" toDisplay={goBack} val="<--" />
           </ButtonsGroup>
           <ButtonsGroup>
             <Button
-              align={1}
+              align={2}
               bg="dark"
-              toDisplay={() => handleButtonClick('/')}
-              val="+-"
-            />
-            <Button
-              align={1}
-              bg="dark"
-              toDisplay={() => handleButtonClick('/')}
+              toDisplay={() => handleButtonClick('^')}
               val="raiz"
             />
             <Button
               align={1}
               bg="dark"
-              toDisplay={() => handleButtonClick('/')}
+              toDisplay={calculatePercent}
               val="%"
             />
             <Button
