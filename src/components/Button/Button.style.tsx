@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import ElementPropStyledComponent from '../../interfaces/StyledComponent.interface';
 
 const Btn = styled.button`
-  /* flex: 1; */
   height: 100%;
   background-color: ${({ theme }) => theme.colors.lightgray};
   color: white;
