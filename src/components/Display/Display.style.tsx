@@ -8,15 +8,16 @@ const WrapperDisplay = styled.div`
 `;
 
 const HeaderDisplay = styled.div`
-  padding: ${({theme})=> theme.spacing.small};
+  padding: ${({ theme }) => theme.spacing.small};
   display: flex;
   justify-content: end;
   align-items: center;
 `;
+
 const AreaDisplay = styled.div`
-  flex: 1 ;
-  display:flex ;
-  justify-content:end ;
+  flex: 1;
+  display: flex;
+  justify-content: end;
 
   textarea {
     resize: 'none';
@@ -25,14 +26,19 @@ const AreaDisplay = styled.div`
     background-color: transparent;
     color: white;
     text-align: end;
-    padding: ${({theme})=> theme.spacing.medium} ${({theme})=> theme.spacing.small};
+    padding: ${({ theme }) => theme.spacing.medium} ${({ theme }) => theme.spacing.small};
+
+    &:focus-visible{
+      outline:none ;
+    }
   }
 `;
+
 const ResultDisplay = styled.div`
-  padding: ${({theme})=> theme.spacing.small};
+  padding: ${({ theme }) => theme.spacing.small};
   height: 2.5rem;
-  display:flex ;
-  justify-content:space-between ;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export { WrapperDisplay, HeaderDisplay, AreaDisplay, ResultDisplay };

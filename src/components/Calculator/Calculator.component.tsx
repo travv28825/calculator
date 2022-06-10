@@ -8,7 +8,7 @@ import {
   NumbersWrapper,
 } from './Calculator.style';
 
-import { equal } from '../operations';
+import { equal, isValidDisplay, isValidToShowResult } from '../operations';
 import Display from '../Display';
 
 function Calculator() {
@@ -16,33 +16,17 @@ function Calculator() {
   const [result, setResult] = useState<string>('');
 
   function handleButtonClick(btnValue: string) {
-    const actualDisplay = displayValue + btnValue;
-    if (isValidDisplay(actualDisplay)) {
-      setDisplayValue((prev) => (prev += btnValue));
-      // calculateFuture(actualDisplay);
+    if (isValidDisplay(displayValue,btnValue)) {
+      const actualDisplay = displayValue + btnValue;
+      setDisplayValue(actualDisplay);
     }
   }
 
   function getEqual(): void {
-    const result = equal(displayValue).toString();
-    setResult(result);
-  }
-
-  function calculateFuture(calculate: string): void {
-    const calc = equal(calculate);
-    if (!isNaN(calc)) {
-      const newFuture = `=${calc.toString()}`;
-      setResult(newFuture);
+    if(isValidToShowResult(displayValue)){
+      const result = equal(displayValue).toString();
+      setResult(result);
     }
-  }
-
-  function isValidDisplay(display: string): boolean {
-    const dotStart = display.indexOf('.') === 0 ? true : false;
-
-    const hasDot = display.match(/\./g);
-    const countDot = hasDot ? hasDot.length : 0;
-
-    return countDot > 1 || dotStart ? false : true;
   }
 
   function onClear(): void {

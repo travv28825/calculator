@@ -7,22 +7,22 @@ import {
 
 interface DisplayType {
   data: string;
-  result:string
+  result: string;
 }
 
-function Display({ data,result }: DisplayType) {
+function Display({ data, result }: DisplayType) {
   return (
     <WrapperDisplay>
       <HeaderDisplay>
-      <i className="fa fa-cog"></i>
+        <i className="fa fa-cog"></i>
       </HeaderDisplay>
       <AreaDisplay>
-        <textarea  value={data} />
+        <textarea value={data} />
       </AreaDisplay>
       <ResultDisplay>
         <p>=</p>
         <p>{result}</p>
-        </ResultDisplay>
+      </ResultDisplay>
     </WrapperDisplay>
   );
 }
