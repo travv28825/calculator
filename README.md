@@ -1,17 +1,16 @@
-### Installation
+<div align="center">
 
-```bash 
-npm install
-```
+## Calculator app with React and TypeScript
+
+</div>
+
+### Installation
+`npm install`
 
 ### Run server as development mode
-```bash 
-npm run dev
-```
+`npm run dev`
 
 ### Deploy
-```javascript 
-npm run build
-```
+`npm run build`
 
-### [Calculator React + TypeScript](https://travv28825.github.io/calculator/)
+### [Calculator App](https://travv28825.github.io/calculator/)
