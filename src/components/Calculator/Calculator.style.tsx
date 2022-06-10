@@ -2,22 +2,22 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: inline-block;
-  height: 100%;
+  height: auto;
   width: 100%;
-  background: #b2b2b2;
 `;
 
 const CalculatorContainer = styled.div`
-  width: 20rem;
+  max-width: 20rem;
   height: 35rem;
   margin: ${({ theme }) => theme.spacing.large} auto;
   overflow: hidden;
   position: relative;
   background: ${({ theme }) => theme.bg.main};
-  box-shadow: 4px 5px 21px #808080c4;
+  box-shadow: 4px 4px 7px rgb(118 117 117 / 25%);
   display: flex;
   flex-direction: column;
   color: white;
+  border: 1px solid rgb(128 128 128 / 75%);
 `;
 
 const NumbersWrapper = styled.div`

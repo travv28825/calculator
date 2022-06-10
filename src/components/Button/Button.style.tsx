@@ -10,28 +10,32 @@ const Btn = styled.button`
   border-top: 0.1px solid ${({ theme }) => theme.bg.main};
   border-right: 1px solid ${({ theme }) => theme.bg.main};
 
-  &:hover {
-    background: gray;
+  &:hover{
     color: white;
+    background-color: ${({ theme }) => theme.colors.darkgray};
   }
 
   ${({ align }: ElementPropStyledComponent) =>
     align &&
     css`
       flex: ${align};
-    `}
+  `}
 
   ${({ primary }: ElementPropStyledComponent) =>
     primary &&
     css`
       background-color: ${({ theme }) => theme.colors.primary};
-    `}
-
+  `}
+      
   ${({ dark }: ElementPropStyledComponent) =>
     dark &&
     css`
       background-color: ${({ theme }) => theme.colors.darkgray};
-    `}
+          
+    &:hover{
+      background-color: ${({ theme }) => theme.colors.lightgray};
+    }
+  `}
 `;
 
 export { Btn };
