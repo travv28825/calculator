@@ -87,6 +87,7 @@ Error generating stack: `+o.message+`
   font-size: 28px;
   border-top: 0.1px solid ${({theme:e})=>e.bg.main};
   border-right: 1px solid ${({theme:e})=>e.bg.main};
+  cursor:pointer;
 
   &:hover{
     color: white;
