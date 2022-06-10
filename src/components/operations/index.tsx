@@ -1,7 +1,9 @@
 const equal = (display: string): number => {
+  // if(typeof display[display.length-1] === 'number'){
   const response = calculateString(display);
 
   return response;
+  // }
 };
 
 function calculateString(str: string): number {
