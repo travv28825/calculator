@@ -1,10 +1,16 @@
-# Calculator app React + TypeScript
-![calculator-preview](https://user-images.githubusercontent.com/66833205/171944330-e59a0b86-b5f7-46d5-9faf-55124113cac1.png)
+<div align="center">
 
-## Steps to Setup
+## Calculator app with React and TypeScript
 
-1. Install dependencies
-- npm install
+</div>
 
-2. Run Server
-- npm run dev
+### Installation
+`npm install`
+
+### Run server as development mode
+`npm run dev`
+
+### Deploy
+`npm run build`
+
+### [Calculator App](https://travv28825.github.io/calculator/)

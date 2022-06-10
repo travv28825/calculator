@@ -1,14 +1,16 @@
 {
   "name": "calculator",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
   "scripts": {
     "format": "prettier --write .",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "^5.3.5"
