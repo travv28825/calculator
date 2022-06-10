@@ -10,7 +10,7 @@ const Container = styled.div`
 const CalculatorContainer = styled.div`
   width: 20rem;
   height: 35rem;
-  /* margin:0 auto ; */
+  margin: ${({ theme }) => theme.spacing.large} auto;
   overflow: hidden;
   position: relative;
   background: ${({ theme }) => theme.bg.main};

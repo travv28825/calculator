@@ -8,7 +8,12 @@ import {
   NumbersWrapper,
 } from './Calculator.style';
 
-import { equal, isValidDisplay, isValidToShowResult, percent } from '../operations';
+import {
+  equal,
+  isValidDisplay,
+  isValidToShowResult,
+  percent,
+} from '../operations';
 import Display from '../Display';
 
 function Calculator() {
@@ -31,9 +36,9 @@ function Calculator() {
 
   function calculatePercent() {
     if (isValidDisplay(displayValue, '%')) {
-      const result = percent(displayValue)
-      setDisplayValue(result)
-      setResult(result)
+      const result = percent(displayValue);
+      setDisplayValue(result);
+      setResult(result);
     }
   }
 
@@ -43,9 +48,9 @@ function Calculator() {
   }
 
   function goBack() {
-    const newDisplay = displayValue.slice(0, displayValue.length - 1)
+    const newDisplay = displayValue.slice(0, displayValue.length - 1);
 
-    setDisplayValue(newDisplay)
+    setDisplayValue(newDisplay);
   }
 
   return (
@@ -64,12 +69,7 @@ function Calculator() {
               toDisplay={() => handleButtonClick('^')}
               val="raiz"
             />
-            <Button
-              align={1}
-              bg="dark"
-              toDisplay={calculatePercent}
-              val="%"
-            />
+            <Button align={1} bg="dark" toDisplay={calculatePercent} val="%" />
             <Button
               align={1}
               bg="dark"

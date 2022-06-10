@@ -26,10 +26,11 @@ const AreaDisplay = styled.div`
     background-color: transparent;
     color: white;
     text-align: end;
-    padding: ${({ theme }) => theme.spacing.medium} ${({ theme }) => theme.spacing.small};
+    padding: ${({ theme }) => theme.spacing.medium}
+      ${({ theme }) => theme.spacing.small};
 
-    &:focus-visible{
-      outline:none ;
+    &:focus-visible {
+      outline: none;
     }
   }
 `;
