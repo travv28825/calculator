@@ -8,6 +8,7 @@ const Btn = styled.button`
   font-size: 28px;
   border-top: 0.1px solid ${({ theme }) => theme.bg.main};
   border-right: 1px solid ${({ theme }) => theme.bg.main};
+  cursor:pointer;
 
   &:hover{
     color: white;

@@ -1,5 +1,17 @@
-# calculator
+### Installation
 
-## Deploy page
+```bash 
+npm install
+```
 
-(Calculator React + TypeScript)[https://travv28825.github.io/calculator/]
+### Run server as development mode
+```bash 
+npm run dev
+```
+
+### Deploy
+```javascript 
+npm run build
+```
+
+### [Calculator React + TypeScript](https://travv28825.github.io/calculator/)
